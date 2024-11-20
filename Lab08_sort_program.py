@@ -1,15 +1,17 @@
 #Python
 
 # 1. Name:
-#      -your name-
+#      Jaxon Powell
 # 2. Assignment Name:
 #      Lab 08: Sort
 # 3. Assignment Description:
-#      -describe what this program is meant to do-
+#      This program will sort the contents of a list in alphabetical order. 
 # 4. What was the hardest part? Be as specific as possible.
-#      -a paragraph or two about how the assignment went for you-
+#      I think that this assignment was very easy for me. There wasn't much confusion about the algorithm or how it is meant to work
+#      The hardest part for me was figuring out how to get each letter and determine if it was in order
+#      I solved this by having a for loop inside a for loop.
 # 5. How long did it take for you to complete the assignment?
-#      -total time in hours including reading the assignment and submitting the program-
+#      This program took me an hour and 45 minutes to complete.
 
 import json
 
@@ -17,6 +19,7 @@ def alphabetical_sort(sorted_list):
 
     #This function sorts into alphabetical order.
     #Returns the sorted list
+    assert isinstance(sorted_list, list), "Input must be a list."
 
     for i in range(len(sorted_list) -1, 0, -1):
         end_value = sorted_list[i]
@@ -42,13 +45,23 @@ def main():
 
         for i in data:
             items.extend(data[i])
+    
+    assert isinstance(items, list), "The data must be a list."
 
-    print(items)
-    print("")
+    for item in items:
+
+        print(f"    {item}")
+    
 
     sorted_list = alphabetical_sort(items)
 
-    print(sorted_list)
+    assert sorted_list == sorted(sorted_list), "The list is not properly sorted"
+
+    print("\n\nSorted list \n")
+
+    for sorted_item in sorted_list:
+
+        print(f"    {sorted_item}")
 
 
 main()
